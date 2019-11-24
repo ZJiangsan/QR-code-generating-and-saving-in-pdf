@@ -4,10 +4,6 @@ Created on Thu Nov 21 16:29:22 2019
 
 @author: jizh
 """
-
-
-import barcode
-from barcode import generate
 import treepoem
 import numpy as np
 from matplotlib.offsetbox import TextArea, DrawingArea, OffsetImage, AnnotationBbox
