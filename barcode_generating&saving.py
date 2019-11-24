@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Nov 24 14:46:17 2019
-
-@author: jizh
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Thu Nov 21 16:29:22 2019
 
 @author: jizh
@@ -28,7 +21,7 @@ from fpdf import FPDF
 
 ##############
 
-## create a series of data
+## generate a series of data
 innoled_x_no = np.array([i for i in range(1,73)]).tolist()
 innoled_x_no = [str(i) for i in innoled_x_no]
 x = np.array(["9:0:1", "8:0:2", "7:0:3", "9:1:0", "8:1:1", "7:1:2"])
@@ -75,7 +68,7 @@ train_id_x=["{}{}".format(a_, b_) for a_, b_ in zip(train_id_x, [".png"]*len(tra
 train_id_x
 
 
-
+## read the QR codes and save them in pdf, 6 in a row, 54 in one page
 pdf = FPDF()
 pdf.set_auto_page_break(0)
 # imagelist is the list with all image filenames
@@ -103,57 +96,6 @@ for id_ in train_id_x:
     pdf.image(img_i_x,m,(n-1)*30,30,30)
     m +=30
 pdf.output("barcode_trial.pdf", "F")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fig, ax = plt.subplots()
-plt.axis('off')
-plt.title("shit qr", fontsize=30)
-
-arr_lena =img
-imagebox = OffsetImage(arr_lena, zoom=2)
-ab = AnnotationBbox(imagebox, (0.5, 0.6))
-
-ax.add_artist(ab)
-plt.close()
-
-plt.draw()
-#plt.savefig('add_picture_matplotlib_figure.png',bbox_inches='tight')
-plt.show()
-
-#plt.figure(figsize = (6,6))
-imshow(fig)
-plt.show()
 
 
 
